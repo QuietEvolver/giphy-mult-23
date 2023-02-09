@@ -35,7 +35,14 @@ function printWeather(description, city) {
 //   document.querySelector('#where-the-api-info-goes').append(img);
 // }
 
-// we have a new function that displays the gif
+// new function that displays the gif
+function displayGif(response, fish){
+  const url = response.data[0].images.downsized.url;
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = `${fish} weather`;
+  document.querySelector("#gif").append(img);
+}
 
 // creating the error message in the getAPIData() function
 function printError(error) {
@@ -44,7 +51,12 @@ function printError(error) {
   document.querySelector('#where-the-api-info-goes').innerText = error;
 }
 
-
+// new function that clear previous results.
+function clearResults() {
+  document.querySelector("#gif").innerText = null;
+  document.querySelector("#error").innerText = null;
+  document.querySelector("#weather-description").innerText = null;
+}
 
 function userInputForm(event) {
   event.preventDefault();

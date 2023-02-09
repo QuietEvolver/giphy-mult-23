@@ -58,11 +58,16 @@ function clearResults() {
   document.querySelector("#weather-description").innerText = null;
 }
 
-function userInputForm(event) {
+function userInputForm(event) { // submit(e)
   event.preventDefault();
-  let fish = document.querySelector('#user-input').value;
-  document.querySelector('#user-input').value = null;
-  getGif(fish);
+  // new clear fxn called
+  clearResults();
+  const fishyCity = document.querySelector("#location").value;
+  // let fish = document.querySelector('#user-input').value;
+  // now handled by clearResults fxn call; document.querySelector('#user-input').value = null;
+  // update API call name()
+  // getGif(fish);
+  getAPIData(fishyCity);
 }
 
 window.addEventListener("load", function() {

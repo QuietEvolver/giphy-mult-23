@@ -1,5 +1,5 @@
-export default class WeatherService {
-  static getWEather(city) {
+export default class WeatherReport {
+  static getWeather(city) {
     return fetch()
       .then(function(response){
         if(!response.ok) {

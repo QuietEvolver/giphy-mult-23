@@ -1,7 +1,8 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import GifApiCall from './js/giphy.js';
+import GifApiCall from './services/giphy.js';
+import WeatherService from './services/weather-service.js';
 
 // Business Logic
 
